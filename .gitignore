@@ -3,6 +3,7 @@
 # tests in this repository.
 /*
 !/.gitignore
+!/.copr/
 !/.editorconfig
 !/LICENSE
 !/LICENSES/
@@ -16,6 +17,7 @@
 !/netbird/
 !/package-lock.json
 !/package.json
+!/packaging/
 !/prefs.js
 !/prefs/
 !/shell/

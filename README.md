@@ -78,6 +78,17 @@ Build the extension ZIP with:
 make package
 ```
 
+On Fedora, build an RPM (needs `rpm-build` and `gjs`) with:
+
+```sh
+make rpm
+```
+
+This archives the current tree, runs `rpmbuild` with
+`packaging/gnome-shell-extension-netbird.spec`, and leaves the noarch and
+source RPMs in `build/`. The package installs the extension system-wide and
+recommends Fedora's `netbird-client` (or NetBird's own `netbird` package).
+
 The repository root is the extension source directory. Development tests live
 under `tests/` and are not included in the ZIP.
 

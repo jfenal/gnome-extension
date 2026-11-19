@@ -5,7 +5,7 @@ JS_FILES := extension.js prefs.js $(shell find netbird prefs shell tests \
 SYMBOLIC_STATUS_ICONS := $(wildcard \
 	icons/hicolor/scalable/status/netbird-systemtray-*-symbolic.svg)
 
-.PHONY: all check clean lint live-api-test package syntax test ui-smoke
+.PHONY: all check clean lint live-api-test package rpm syntax test ui-smoke
 
 all: check package
 
@@ -57,5 +57,10 @@ ui-smoke: check
 package: check
 	@./install.sh --pack-only
 
+# Build build/*.rpm (noarch + src) for Fedora from the current tree.
+rpm:
+	@packaging/build-rpm.sh
+
 clean:
 	@rm -f "$(ZIP)"
+	@rm -rf build/rpmbuild build/*.rpm
